@@ -8,3 +8,11 @@
   # Adds the official Ansible PPA repository and install the latest version of Ansible.
   sudo add-apt-repository --yes --update ppa:ansible/ansible
   ```
+
+#### For network configuration i prefer to use nmtui (NetworkManager UI) to set set network configuration
+```
+# user user root for administartor access, or u can use sudo for privillage access
+sudo nmtui
+# restart and apply
+sudo systemctl restart NetworkManager
+```

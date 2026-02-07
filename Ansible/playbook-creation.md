@@ -62,7 +62,7 @@ vi site.yml
 ```
 
 ```
-# This is other creation playbook with using variable, following this command to reate file playbook
+# This is other creation playbook with using variable, following this command to create file playbook
 vi playbook.yml
 ---
 - name: Install and Ensure the Apache2 service started
@@ -110,9 +110,48 @@ vi playbook.yml
 ```
 
 ```
+# This is other creation playbook with using jinja-jina template, following this command to create file playbook
+vi playbook-jinja.yml
+---
+- name: install and start apache2
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: ensure apache2 package is present
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+        force_apt_get: yes
+
+    - name: restart apache2 service
+      service:
+        name: apache2
+        state: restarted
+        enabled: yes
+
+# Replace lina with ur real name/case
+    - name: copy index.html
+      template:
+        src: lina.html.j2
+        dest: /var/www/html/lina.html
+
+```
+```
+#  Create Jinja 2 template. Replace lina with ur name/case
+vim vim lina.html.j2
+Hello World!
+This is lina site.
+
+```
+
+```
 # Check the syntax of playbook creation
 ansible-playbook --syntax-check site.yml
 ansible-playbook --syntax-check playbook.yml
+ansible-playbook --syntax-check playbook-jinja.yml
 # Following tis command to running playbook
 ansible-playbook site.yml
 ansible-playbook playbook.yml
+ansible-playbook playbook-jinja.yml

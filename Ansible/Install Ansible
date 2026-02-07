@@ -1,0 +1,10 @@
+
+- Install the required package before install ansible
+  ```
+  # Updates the list of available software packages from Ubuntu repositories.
+  sudo apt update
+  # After that, must be to fill the username and the password of the account who had subscription RHEL
+  sudo apt install -y software-properties-common
+  # Adds the official Ansible PPA repository and install the latest version of Ansible.
+  sudo add-apt-repository --yes --update ppa:ansible/ansible
+  ```

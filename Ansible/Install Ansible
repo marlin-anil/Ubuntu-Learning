@@ -9,3 +9,4 @@ sudo apt install -y software-properties-common
 
 # Add the official Ansible PPA repository and update package list
 sudo add-apt-repository --yes --update ppa:ansible/ansible
+```

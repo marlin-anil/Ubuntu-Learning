@@ -110,6 +110,9 @@ vi playbook.yml
 ```
 
 ```
+# Check the syntax of playbook creation
+ansible-playbook --syntax-check site.yml
+ansible-playbook --syntax-check playbook.yml
 # Following tis command to running playbook
 ansible-playbook site.yml
 ansible-playbook playbook.yml

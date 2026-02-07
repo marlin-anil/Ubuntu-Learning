@@ -2,16 +2,6 @@
 
 This playbook is used to **install Apache2**, **deploy a custom index.html page**, and **start the Apache service** automatically on target hosts using Ansible.
 
----
-
-### 📂 Project Structure
-
-playbook-basic/
-├── ansible.cfg
-├── inventory
-├── site.yml
-└── files/
-└── index.html
 
 ```
 # Create directory
@@ -62,3 +52,7 @@ This playbook performs the following tasks:
         state: started
         enabled: true
 ```
+
+```
+# Following tis command to running playbook
+ansible-playbook site.yml

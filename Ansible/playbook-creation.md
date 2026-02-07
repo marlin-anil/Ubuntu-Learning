@@ -7,7 +7,10 @@ This playbook is used to **install Apache2**, **deploy a custom index.html page*
 ```
 # Create directory
 mkdir playbook-basic/
-# Enetering directory 
+
+# Enetering directory
+cd playbook-basic/
+
 # Create ansible configuration file
 vim ansible.cfg
 [defaults]
@@ -151,6 +154,7 @@ This is lina site.
 ansible-playbook --syntax-check site.yml
 ansible-playbook --syntax-check playbook.yml
 ansible-playbook --syntax-check playbook-jinja.yml
+
 # Following tis command to running playbook
 ansible-playbook site.yml
 ansible-playbook playbook.yml
